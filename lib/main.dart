@@ -5,7 +5,6 @@ import 'features/presentation/pages/todo/todo_screen.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

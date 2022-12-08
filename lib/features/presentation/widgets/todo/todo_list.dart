@@ -31,8 +31,6 @@ class _TodoListViewState extends State<TodoListView> {
   void didChangeDependencies() async {
     super.didChangeDependencies();
     final networkStatus = await context.read<NetworkBloc>().state;
-    print('network Stattus:$networkStatus');
-    print('networrk status:$networkStatus');
     if (networkStatus != NetworkFailure) {
       context.read<TodoBloc>().add(GetTodos());
     }

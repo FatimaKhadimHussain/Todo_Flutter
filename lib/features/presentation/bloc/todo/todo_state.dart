@@ -17,6 +17,9 @@ class TodoLoaded extends TodoState {
   const TodoLoaded({
     required this.todos,
   });
+
+  @override
+  List<Object> get props => [todos];
 }
 
 class TodoError extends TodoState {

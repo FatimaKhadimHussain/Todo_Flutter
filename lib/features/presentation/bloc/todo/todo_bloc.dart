@@ -17,10 +17,10 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   TodoState get initialState => TodoInitial();
 
   TodoBloc({required this.loadTodos}) : super(TodoInitial()) {
-    on<GetTodos>(_addLoadTodosToState);
+    on<GetTodos>(_addLoadTodosToEvent);
   }
 
-  Future<void> _addLoadTodosToState(GetTodos event, Emitter<TodoState> state) async {
+  Future<void> _addLoadTodosToEvent(GetTodos event, Emitter<TodoState> state) async {
     emit(TodoLoading());
     final eitherTodosOrFailure = await loadTodos(NoParams());
     eitherTodosOrFailure.fold((failure) async {
